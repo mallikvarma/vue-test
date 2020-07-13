@@ -1,29 +1,21 @@
-# test
+## Installation
 
-## Project setup
-```
+// To setup the project 
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
+// TO run the app locally
 npm run serve
-```
 
-### Compiles and minifies for production
-```
+// To generate the build
 npm run build
-```
 
-### Run your unit tests
-```
+// To run unit tests with coverage
 npm run test:unit
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Architectural Decisions
+
+•	Vue.js:  Vue.js is progressive javascript framework, which is lightweight, modular and provide       flexible development environment.
+•	VueX:  Redux based Vue state management
+•	axios:  Promise based HTTP client for the browser
