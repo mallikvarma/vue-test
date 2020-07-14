@@ -19,7 +19,7 @@ export default {
   components: { Show },
   computed: mapState(["shows"]),
   mounted: function() {
-    this.$store.dispatch("getTopShows");
+    this.$store.dispatch("GET_TOP_SHOWS");
   }
 };
 </script>
@@ -28,6 +28,12 @@ export default {
   display: flex;
   margin: auto;
   flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 640px) {
+  .shows-main {
+    justify-content:  center;
+  }
 }
 </style>
 

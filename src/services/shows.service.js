@@ -1,8 +1,12 @@
 import axios from "axios";
 
+axios.defaults.baseURL = "https://api.tvmaze.com";
+
+
+// handles all the http service calls in the app
 class ShowsService {
-  allShowsUrl = "https://api.tvmaze.com/shows";
-  showLookUpUrl = "https://api.tvmaze.com/singlesearch/shows?q=";
+  allShowsUrl = "/shows";
+  showLookUpUrl = "/singlesearch/shows?q=";
 
   getTopShows() {
     return axios.get(this.allShowsUrl);

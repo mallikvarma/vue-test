@@ -1,6 +1,11 @@
 import showsService from "../services/shows.service.js";
 
 export default {
+  /**
+   * get all the shows from API and filters by highest rating
+   * 
+   * @param state 
+   */
   updateShows: function(state) {
     showsService.getTopShows().then(
       result => {
@@ -18,13 +23,15 @@ export default {
           })
           .filter(item => item.rating > 8.9);
         state.shows = tempshows;
-      },
-      error => {
-        console.log("ERROR: "+ error)
       }
     );
   },
-
+  /**
+   * sets the active show to be displayed in details screen, by showId
+   * 
+   * @param  state 
+   * @param  showId 
+   */
   updateActiveShow: function(state, showId) {
     let showsRef = state.shows;
     let activeShow = showsRef.find(
@@ -32,7 +39,12 @@ export default {
     );
     state.activeShow = activeShow;
   },
-
+  /**
+   * Gets show details from API by search
+   * 
+   * @param state 
+   * @param showName 
+   */
   updateActiveShowByName: function(state, showName) {
     showsService.getShowDetailsByName(showName).then(
       result => {
@@ -46,9 +58,6 @@ export default {
           runtime: result.data.runtime || ""
         };
         state.activeShow = showObj;
-      },
-      error => {
-        console.log("ERROR: "+ error)
       }
     );
   }

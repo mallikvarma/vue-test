@@ -36,10 +36,10 @@ export default {
   name: "ShowDetails",
   computed: mapState(["activeShow"]),
   mounted: function() {
-    let action = "getShowDetails";
+    let action = "GET_SHOW_DETAILS";
     //if its a seach request
     if (isNaN(this.$route.params.id)) {
-      action = "getShowDetailsByName";
+      action = "GET_SHOW_DETAILS_BY_NAME";
     }
     this.$store.dispatch(action, this.$route.params.id);
   }
@@ -110,5 +110,30 @@ export default {
     }
   }
 }
+
+
+  @media only screen and (max-width: 640px) {
+    .show-details-main {
+      .title {
+        font-size: 1.5em;
+        margin-left: 10px;
+      }
+        .show-data {
+          display: block;
+
+          .show-content {
+            padding: 10px;
+          }
+
+        }
+
+        .show-img {
+          width: 100px;
+          height: 160px !important;
+          margin: auto !important;
+        }
+    }
+  }
+
 </style>
 

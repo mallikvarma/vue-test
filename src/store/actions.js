@@ -1,13 +1,13 @@
 export default {
-    getTopShows: function(store) {
+    GET_TOP_SHOWS: function(store) {
       store.commit("updateShows");
     },
   
-    getShowDetails: function(store, params) {
+    GET_SHOW_DETAILS: function(store, params) {
       store.commit("updateActiveShow", params);
     },
   
-    getShowDetailsByName: function(store, showName) {
+    GET_SHOW_DETAILS_BY_NAME: function(store, showName) {
       store.commit("updateActiveShowByName", showName);
     }
   };
