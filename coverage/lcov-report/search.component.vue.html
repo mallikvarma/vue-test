@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for show.component.vue</title>
+    <title>Code coverage report for search.component.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -18,34 +18,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> show.component.vue</h1>
+        <h1><a href="index.html">All files</a> search.component.vue</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -116,14 +116,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -156,57 +155,58 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-  &lt;div class="show" @click="showDetails"&gt;
-    &lt;img :src="image"&gt;
-    &lt;div class="show-info-container"&gt;
-      &lt;span&gt;{{name}}&lt;/span&gt;
-      &lt;div class="rating"&gt;
-        &lt;img src="../assets/star.png"&gt;
-        {{rating}}
-      &lt;/div&gt;
+    &lt;div class="search" &gt;
+        &lt;input placeholder="search" v-model="showName" @keyup.enter="searchShow"&gt;
+        &lt;a @click="searchShow"&gt;go&lt;/a&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
 &lt;/template&gt;
 &lt;script&gt;
 export default {
-  name: "Show",
-  props: ["name", "rating", "image", "id"],
+  name: "SeachField",
+  data: function() {
+    return {
+      showName: ""
+    };
+  },
   methods: {
-    showDetails: function() {
-      this.$router.push("/show/" + this.id);
+    searchShow: function() {
+      if (this.showName) {        
+        this.$emit("onSearch", this.showName)
+      }
     }
   }
 };
 &lt;/script&gt;
-&lt;style lang="less"&gt;
-.show {
-  margin: 5px;
-  cursor: pointer;
-  .show-info-container {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8em;
-    font-family: arial;
-    padding: 3px;
-    background-color: #775656;
-    color: white;
+&lt;style lang="less" scoped&gt;
+  .search {
+    margin-right: 75px;
+    input {
+      width: 110px;
+    }
 &nbsp;
-    .rating {
-      display: flex;
-      align-content: center;
-      margin-right: 5px;
-      img {
-        width: 15px;
-        height: 15px;
-        margin-right: 5px;
-      }
+    a {
+      font-family: arial;
+      background-color: #13a913;
+      color: white;
+      padding: 5px;
+      border-radius: 12px;
+      width: 12px;
+      height: 10px;
+      margin: 4px;
+      font-size: 0.9em;
+      cursor: pointer;
     }
   }
-}
-&lt;/style&gt;
 &nbsp;
-&nbsp;</pre></td></tr></table></pre>
+&nbsp;
+ @media only screen and (max-width: 640px) {
+  .search {
+    margin-right: 10px;
+  }
+}
+&lt;/style&gt;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

@@ -18,10 +18,8 @@ export default {
     }
   },
   methods: {
-    searchShow: function(showName) {
-      if (showName) {
-        this.$router.push("/show/" + showName);
-      }
+    searchShow: function(showName) {      
+      this.$router.push("/show/" + showName);
     }
   }
 };
