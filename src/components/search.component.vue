@@ -2,6 +2,7 @@
     <div class="search" >
         <input placeholder="search" v-model="showName" @keyup.enter="searchShow">
         <a @click="searchShow">go</a>
+        <span class="error" v-if="error">*please enter show name</span>
     </div>
 </template>
 <script>
@@ -9,13 +10,17 @@ export default {
   name: "SeachField",
   data: function() {
     return {
-      showName: ""
+      showName: "",
+      error: false
     };
   },
   methods: {
     searchShow: function() {
-      if (this.showName) {        
+      if (this.showName) {      
+        this.error = false;  
         this.$emit("onSearch", this.showName)
+      } else {
+        this.error = true;
       }
     }
   }
@@ -39,6 +44,14 @@ export default {
       margin: 4px;
       font-size: 0.9em;
       cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      display: block;
+      font-family: arial;
+      font-size: 0.8em;
+      margin-top: 3px;
     }
   }
 
