@@ -3,7 +3,7 @@
 // To setup the project 
 npm install
 
-// TO run the app locally
+// To run the app locally
 npm run serve
 
 // To generate the build
