@@ -28,15 +28,18 @@ export default {
 </script>
 <style lang="less" scoped>
   .search {
-    margin-right: 75px;
+    margin-right: 10px;
     input {
-      width: 110px;
+      width: 128px;
+      border: 0px;
+      height: 20px;
+      border-radius: 5px;
     }
 
     a {
       font-family: arial;
-      background-color: #13a913;
-      color: white;
+      background-color: #f3ea88;
+      color: #334632;
       padding: 5px;
       border-radius: 12px;
       width: 12px;

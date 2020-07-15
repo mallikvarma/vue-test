@@ -36,12 +36,7 @@ export default {
   name: "ShowDetails",
   computed: mapState(["activeShow"]),
   mounted: function() {
-    let action = "GET_SHOW_DETAILS";
-    //if its a seach request
-    if (isNaN(this.$route.params.id)) {
-      action = "GET_SHOW_DETAILS_BY_NAME";
-    }
-    this.$store.dispatch(action, this.$route.params.id);
+    this.$store.dispatch("GET_SHOW_DETAILS", this.$route.params.id);
   }
 };
 </script>

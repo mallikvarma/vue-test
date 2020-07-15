@@ -25,14 +25,21 @@ export default {
 .show {
   margin: 5px;
   cursor: pointer;
+  position: relative;
   .show-info-container {
     display: flex;
     justify-content: space-between;
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-family: arial;
     padding: 3px;
-    background-color: #775656;
-    color: white;
+    background-color: #0d5b5f;
+    color: #fffdfd;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: -39px;
+    padding-top: 23px;
+    padding-bottom: 7px;
 
     .rating {
       display: flex;

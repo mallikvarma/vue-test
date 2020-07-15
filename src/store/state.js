@@ -1,5 +1,10 @@
 export default {
-    shows: [],
+    shows: {
+       drama: [],
+       action: [],
+       comedy: [],
+       horror: []
+    },
     activeShow: null
   };
   

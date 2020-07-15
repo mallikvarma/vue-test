@@ -9,19 +9,20 @@ export default {
   updateShows: function(state) {
     showsService.getTopShows().then(
       result => {
-        let tempshows = result.data
-          .map(data => {
-            return {
-              id: data.id,
-              images: data.image,
-              rating: data.rating.average,
-              desc: data.summary,
-              name: data.name,
-              language: data.language,
-              runtime: data.runtime
-            };
-          })
-          .filter(item => item.rating > 8.9);
+        let tempshows = {drama: [], action: [], horror: [], comedy: []}
+        result.data.forEach(function (showObj) {
+          if(showObj.genres.length > 0 ){
+            let genre = showObj.genres[0].toLowerCase();
+            if( Object.prototype.hasOwnProperty.call(tempshows, genre)){             
+                tempshows[genre].push({ id: showObj.id, name: showObj.name, rating: showObj.rating.average || '',  image: showObj.image || '' });             
+            }
+          }
+        })
+        const sortFunc  = (a, b) => b.rating-a.rating;
+        tempshows.drama = tempshows.drama.sort(sortFunc).slice(0, 5);
+        tempshows.action = tempshows.action.sort(sortFunc).slice(0, 5);
+        tempshows.horror = tempshows.horror.sort(sortFunc).slice(0, 5);
+        tempshows.comedy = tempshows.comedy.sort(sortFunc).slice(0, 5);
         state.shows = tempshows;
       }
     );

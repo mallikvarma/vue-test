@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <AppHeader />
-    <div>
+    <div class="app-content">
       <router-view></router-view>
     </div>
+    <footer>Developed by Mallik</footer>
   </div>
 </template>
 
@@ -25,10 +26,28 @@ body {
 }
 
 #app {
-  width: 75%;
+  height:100%;
   display: flex;
   flex-direction: column;
   margin: auto;
+
+  .app-content{
+     flex: 1;
+     overflow: auto;
+     margin: 10px;
+     margin-right: 0px;
+  }
+
+  footer {
+    height: 30px;
+    background-color: #353131;
+    color: #a0a6a7;
+    font-size: 0.7em;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+  }
+
 }
 
 
