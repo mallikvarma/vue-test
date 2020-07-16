@@ -14,7 +14,8 @@ export default {
   components: { SearchField },
   methods: {
     searchShow: function(showName) {      
-      this.$router.push("/show/" + showName);
+      this.$router.push("/search/" + showName);
+      this.$router.go();
     }
   }
 };

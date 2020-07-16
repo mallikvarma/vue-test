@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -106,7 +106,19 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -119,12 +131,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,23 +182,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
   &lt;div class="show" @click="showDetails"&gt;
-    &lt;img :src="image"&gt;
+    &lt;img :src="image" @error="onImageLoadError($event)"&gt;
     &lt;div class="show-info-container"&gt;
       &lt;span&gt;{{name}}&lt;/span&gt;
-      &lt;div class="rating"&gt;
-        &lt;img src="../assets/star.png"&gt;
+      &lt;div class="rating" v-if="rating &amp;&amp; rating &gt; 0"&gt;
+        &lt;img src="../assets/star.png" &gt;
         {{rating}}
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/template&gt;
 &lt;script&gt;
+import imageErrHandler from "../mixins/image-error-handler.mixin.js"
+&nbsp;
 export default {
   name: "Show",
-  props: ["name", "rating", "image", "id"],
+  mixins: [imageErrHandler],
+  props: { 
+      name: String,
+      rating: Number,
+      image: String,
+      id: Number 
+      },
   methods: {
-<span class="fstat-no" title="function not covered" >    showDetails: function() {</span>
-<span class="cstat-no" title="statement not covered" >      this.$router.push("/show/" + this.id);</span>
+    showDetails: function() {
+      this.$router.push("/show/" + this.id);
     }
   }
 };
@@ -182,15 +214,19 @@ export default {
 &lt;style lang="less"&gt;
 .show {
   margin: 5px;
+  max-width: 210px;
   cursor: pointer;
+  position: relative;
   .show-info-container {
     display: flex;
     justify-content: space-between;
-    font-size: 0.8em;
+    font-size: 0.9em;
     font-family: arial;
     padding: 3px;
-    background-color: #775656;
-    color: white;
+    background-color: #0d5b5f;
+    color: #fffdfd;
+    width: 100%;
+    box-sizing: border-box;
 &nbsp;
     .rating {
       display: flex;
@@ -213,7 +249,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jul 13 2020 14:48:35 GMT+0530 (India Standard Time)
+                at Thu Jul 16 2020 19:21:56 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="..\prettify.js"></script>

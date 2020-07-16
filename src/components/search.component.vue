@@ -50,7 +50,7 @@ export default {
     }
 
     .error {
-      color: red;
+      color: white;
       display: block;
       font-family: arial;
       font-size: 0.8em;

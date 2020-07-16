@@ -1,29 +1,32 @@
 <template>
   <div class="show-details-main" v-if="activeShow">
-    <div class="title">
-      <span>{{activeShow.name}}</span>
+    <div class="title">      
       <div class="back-btn" @click="$router.go(-1)">
         <img src="../assets/back.png">
         back
       </div>
     </div>
     <div class="show-data">
-      <div class="show-img" :style="{backgroundImage: `url(${activeShow.images.original})`}"></div>
-      <div class="show-content">
-        <div class="show-desc" v-html="activeShow.desc"></div>
+      <img class="show-img" @error="onImageLoadError($event)" :src="activeShow.right.image.original" v-if="activeShow.right.image && activeShow.right.image.original">
+      <div class="show-desc" >
+        <div v-html="activeShow.right.summary"></div>        
         <div class="show-info">
-          <div>
-            Runtime:
-            <b>{{activeShow.runtime}}</b>
-          </div>
-          <div>
-            Rating:
-            <b>{{activeShow.rating}}</b>
-          </div>
-          <div>
-            Language:
-            <b>{{activeShow.language}}</b>
-          </div>
+            <div class="info">
+              <template v-for="(value, propertyName) in activeShow.left" >
+                <div class="data" v-bind:key="propertyName"  v-if="propertyName && value && value !==0">
+                  {{propertyName}}:
+                  <b>{{value}}</b>
+                </div>  
+              </template>
+
+                <div class="casting" v-if="activeShow.right._embedded.cast && activeShow.right._embedded.cast.length > 0">
+                  <div class="cast-title">Cast</div>
+                  <template v-for="(cast, index) in activeShow.right._embedded.cast" >
+                     <img @error="onImageLoadError($event)" :src="cast.person.image.medium"  v-bind:key="index" v-if="cast.person.image && cast.person.image.medium">
+                  </template>
+                </div>
+
+            </div>
         </div>
       </div>
     </div>
@@ -31,103 +34,97 @@
 </template>
 <script>
 import { mapState } from "vuex";
+import imageErrHandler from "../mixins/image-error-handler.mixin.js";
 
 export default {
   name: "ShowDetails",
+  mixins: [imageErrHandler],
   computed: mapState(["activeShow"]),
+  data: function(){
+    return {
+       mixinHint: 'elementLevel'
+    }
+  },
   mounted: function() {
     this.$store.dispatch("GET_SHOW_DETAILS", this.$route.params.id);
   }
 };
 </script>
 <style lang="less">
-.show-details-main {
-  display: flex;
-  flex-direction: column;
 
-  .title {
-    font-size: 2rem;
-    font-family: Arial;
-    color: #e0b8b4;
-    padding: 10px;
-    padding-left: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .back-btn {
+  .show-details-main {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    .title {
+      font-size: 2rem;
+      font-family: Arial;
+      color: #e0b8b4;
+      padding: 10px;
+      padding-left: 0px;
       display: flex;
       align-items: center;
-      font-size: 1.2rem;
-      color: #c44f43;
-      font-weight: normal;
-      cursor: pointer;
-      img {
-        width: 26px;
-        height: 26px;
+      justify-content: space-between;
+
+      .back-btn {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        color: #c44f43;
+        font-weight: normal;
+        cursor: pointer;
+        img {
+          width: 26px;
+          height: 26px;
+        }
       }
     }
-  }
-
-  .show-data {
-    display: flex;
-
-    .show-img {
-      width: 100px;
-      height: 200px;
-      flex: 1;
-      height: 400px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      margin-right: 10px;
-    }
-
-    .show-content {
-      flex: 2;
-      flex-direction: column;
+    .show-data {
       display: flex;
-      .show-desc {
-        font-family: Arial;
-        flex: 1;
+      height: 100%;
+      > * {
+        font-family: 'Arial';
+        margin-right: 20px;
       }
-
+      .show-img {
+        width: 250px;
+      }
       .show-info {
-        flex: 2;
-        background-color: #f4f4f5;
-        border-radius: 26px;
-        font-family: arial;
-        padding: 34px;
-
-        > div {
-          margin-bottom: 5px;
+        .info {
+          min-width: 250px;
+          background-color: #bfdfe0;
+          border-radius: 10px;
+          padding: 10px;
+          .data{
+            display: inline-block;
+            opacity: 0.7;
+            background-color: white;
+            margin: 5px;
+            border-radius: 5px;
+            padding: 5px;
+            border: 0.5px solid gray;
+          }
+          .casting {
+            width: 80%;
+            .cast-title{
+              font-size: 1.2rem;
+              margin-left: 10px;
+              margin-top: 22px;
+            }
+            img{
+              height: 140px;
+              border: 1px solid white;
+              margin: 10px;
+              border-radius: 15px;
+            }
+          }
         }
       }
     }
   }
-}
-
 
   @media only screen and (max-width: 640px) {
-    .show-details-main {
-      .title {
-        font-size: 1.5em;
-        margin-left: 10px;
-      }
-        .show-data {
-          display: block;
 
-          .show-content {
-            padding: 10px;
-          }
-
-        }
-
-        .show-img {
-          width: 100px;
-          height: 160px !important;
-          margin: auto !important;
-        }
-    }
   }
 
 </style>

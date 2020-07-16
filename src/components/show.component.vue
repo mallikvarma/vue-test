@@ -1,19 +1,27 @@
 <template>
   <div class="show" @click="showDetails">
-    <img :src="image">
+    <img :src="image" @error="onImageLoadError($event)">
     <div class="show-info-container">
       <span>{{name}}</span>
-      <div class="rating">
-        <img src="../assets/star.png">
+      <div class="rating" v-if="rating && rating > 0">
+        <img src="../assets/star.png" >
         {{rating}}
       </div>
     </div>
   </div>
 </template>
 <script>
+import imageErrHandler from "../mixins/image-error-handler.mixin.js"
+
 export default {
   name: "Show",
-  props: ["name", "rating", "image", "id"],
+  mixins: [imageErrHandler],
+  props: { 
+      name: String,
+      rating: Number,
+      image: String,
+      id: Number 
+      },
   methods: {
     showDetails: function() {
       this.$router.push("/show/" + this.id);
@@ -24,6 +32,7 @@ export default {
 <style lang="less">
 .show {
   margin: 5px;
+  max-width: 210px;
   cursor: pointer;
   position: relative;
   .show-info-container {
@@ -34,12 +43,8 @@ export default {
     padding: 3px;
     background-color: #0d5b5f;
     color: #fffdfd;
-    position: absolute;
     width: 100%;
     box-sizing: border-box;
-    margin-top: -39px;
-    padding-top: 23px;
-    padding-bottom: 7px;
 
     .rating {
       display: flex;

@@ -33,12 +33,13 @@ export default {
    * @param  state 
    * @param  showId 
    */
-  updateActiveShow: function(state, showId) {
-    let showsRef = state.shows;
-    let activeShow = showsRef.find(
-      showObj => String(showObj.id) === String(showId)
-    );
-    state.activeShow = activeShow;
+  updateActiveShow: function(state, showId) {    
+    state.activeShow = null;
+    showsService.getShowDetails(showId).then( result => {
+      const {name, summary, rating:{average: rating}, image, language, status, type, _embedded} = result.data; 
+      const tempActiveShow = {left:{ name, rating, language, status, type}, right:{image, summary, _embedded}}
+      state.activeShow = tempActiveShow;
+    })    
   },
   /**
    * Gets show details from API by search
@@ -49,16 +50,20 @@ export default {
   updateActiveShowByName: function(state, showName) {
     showsService.getShowDetailsByName(showName).then(
       result => {
-        let showObj = {
-          id: result.data.id,
-          images: result.data.image || "",
-          rating: result.data.rating.average || "",
-          desc: result.data.summary || "",
-          name: result.data.name || "",
-          language: result.data.language || "",
-          runtime: result.data.runtime || ""
-        };
-        state.activeShow = showObj;
+
+        let tempCol = result.data.map( obj => {
+          return  {
+                    id: obj.show.id,
+                    image: obj.show.image || "",
+                    rating: obj.show.rating.average || 0,
+                    desc: obj.show.summary || "",
+                    name: obj.show.name || "",
+                    language: obj.show.language || "",
+                    runtime: obj.show.runtime || ""
+                  };
+        })
+
+        state.searchResults = tempCol;
       }
     );
   }

@@ -5,6 +5,7 @@ export default {
        comedy: [],
        horror: []
     },
-    activeShow: null
+    activeShow: null,
+    searchResults: []
   };
   

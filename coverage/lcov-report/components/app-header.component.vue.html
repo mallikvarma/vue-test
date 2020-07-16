@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/shows.component.vue</title>
+    <title>Code coverage report for components/app-header.component.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="..\prettify.css" />
     <link rel="stylesheet" href="..\base.css" />
@@ -18,7 +18,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="..\index.html">All files</a> / <a href="index.html">components</a> shows.component.vue</h1>
+        <h1><a href="..\index.html">All files</a> / <a href="index.html">components</a> app-header.component.vue</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -107,11 +107,7 @@
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L52'></a><a href='#L52'>52</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,10 +117,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -138,7 +131,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,61 +159,57 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
-  &lt;div class="shows-main"&gt;
-    &lt;div v-for="(shows, propertyName) in shows" v-bind:key="propertyName"&gt;
-        &lt;div class="genre"&gt;{{propertyName}}&lt;/div&gt;
-        &lt;div class="shows-container"&gt;
-            &lt;Show
-            :name="show.name"
-            :rating="show.rating"
-            :image="show.image.medium || ''"
-            :id="show.id"
-            v-for="show in shows"
-            v-bind:key="show.id" &gt; {{ show }} &lt;/Show&gt;   
-        &lt;/div&gt; 
-        &lt;br&gt;
-        &lt;br&gt;
-     &lt;/div&gt;
-  &lt;/div&gt;
+    &lt;header&gt;
+      &lt;div class="logo"&gt;
+        &lt;img src="../assets/tv.png"&gt;
+        Popular TV Shows
+      &lt;/div&gt;
+      &lt;SearchField  @onSearch="searchShow" /&gt;   
+    &lt;/header&gt;
 &lt;/template&gt;
 &lt;script&gt;
-import { mapState } from "vuex";
-import Show from "./show.component.vue";
-&nbsp;
+import SearchField from "./search.component.vue";
 export default {
-  name: "TopShows",
-  components: { Show },
-  computed: mapState(["shows"]),
-  mounted: function() {
-    this.$store.dispatch("GET_TOP_SHOWS");
+  name: "AppHeader",
+  components: { SearchField },
+  methods: {
+    searchShow: function(showName) {      
+      this.$router.push("/search/" + showName);
+      this.$router.go();
+    }
   }
 };
 &lt;/script&gt;
-&lt;style lang="less"&gt;
-.shows-main {
-  .genre{ 
-    font-size: 1.2rem;
-    font-family: sans-serif;
-    color: #0a4143;
-    margin-left: 5px;
-    padding-left: 5px;
-    border-left: 4px solid #353131;
-    text-transform: capitalize;
-  }
+&lt;style lang="less" scoped&gt;
 &nbsp;
-  .shows-container{
+  header {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: #189ca2;
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      color: #13161b;
+      text-shadow: 2px 2px 12px #fffdfd;
+      img {
+        width: 50px;
+        height: auto;
+      }
+    }
   }
 &nbsp;
-}
+ 
+  @media only screen and (max-width: 368px) {
 &nbsp;
-@media only screen and (max-width: 640px) {
+  }
 &nbsp;
-}
-&lt;/style&gt;
-&nbsp;
-&nbsp;</pre></td></tr></table></pre>
+&lt;/style&gt;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
