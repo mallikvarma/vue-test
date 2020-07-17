@@ -19,8 +19,8 @@ describe('show-details.component.vue', () => {
         state:{
           shows: [{
                   id: 1,
-                  images: "",
-                  rating: "6.5",
+                  image: {medium:"", original:""},
+                  rating: 6.5,
                   desc: "movie summary",
                   name: "God Father",
                   language: "english",
@@ -46,21 +46,6 @@ describe('show-details.component.vue', () => {
           expect(actions.GET_SHOW_DETAILS).toHaveBeenCalled()
      }) 
 
-     
-    it('Should dispatch GET_SHOW_DETAILS_BY_NAME when param is showName', () => {       
-        const $route = {
-            params: {id: 'godfather'}
-          }
-          const wrapper = mount(ShowDetails, {
-            mocks: {
-              $route
-            },
-            store,
-            localVue
-          })
-
-          expect(actions.GET_SHOW_DETAILS_BY_NAME).toHaveBeenCalled()
-     }) 
 
   
   })

@@ -1,19 +1,21 @@
 <template>
   <div class="shows-main">
-    <div v-for="(shows, propertyName) in shows" v-bind:key="propertyName">
-        <div class="genre">{{propertyName}}</div>
-        <div class="shows-container">
-            <Show
-            :name="show.name"
-            :rating="show.rating"
-            :image="show.image.medium || ''"
-            :id="show.id"
-            v-for="show in shows"
-            v-bind:key="show.id" > {{ show }} </Show>   
-        </div> 
-        <br>
-        <br>
-     </div>
+   <template v-for="(shows, propertyName) in shows">
+          <div  v-bind:key="propertyName" v-if="shows.length > 0">
+              <div class="genre">{{propertyName}}</div>
+              <div class="shows-container">
+                  <Show
+                  :name="show.name"
+                  :rating="show.rating"
+                  :image="show.image.medium || ''"
+                  :id="show.id"
+                  v-for="show in shows"
+                  v-bind:key="show.id" > {{ show }} </Show>   
+              </div> 
+              <br>
+              <br>
+          </div>
+    </template>
   </div>
 </template>
 <script>

@@ -16,27 +16,30 @@ describe('shows.component.vue', () => {
       GET_TOP_SHOWS: jest.fn()
     }
     store = new Vuex.Store({
-      state:{
-        shows: [{
-                id: 1,
-                images: "",
-                rating: "6.5",
-                desc: "movie summary",
-                name: "God Father",
-                language: "english",
-                runtime: "20"
-            },
-            {
-              id: 2,
-              images: "",
-              rating: "6.5",
-              desc: "movie summary",
-              name: "God Father 2",
-              language: "English",
-              runtime: "30"
-          }
-          ]},
-        actions
+      state:{shows: {
+        drama:[
+                  {
+                    id: 1,
+                    image: {medium: ""},
+                    rating: 6.5,
+                    desc: "movie summary",
+                    name: "God Father",
+                    language: "english",
+                    runtime: "20"
+                },
+                {
+                  id: 2,
+                  image: {medium: ""},
+                  rating: 6.5,
+                  desc: "movie summary",
+                  name: "God Father 2",
+                  language: "English",
+                  runtime: "30"
+              }
+        ],
+        action: [], horror: [], comedy: []
+      }},
+      actions
     })    
   })
 

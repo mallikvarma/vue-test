@@ -10,7 +10,7 @@ Vue.use(VueRouter);
 const routes = [
   { path: "/", component: TopShows},
   { path: "*", redirect: "/"},
-  { path: "/search/:name", component: SearchResults},
+  { path: "/search/:name", component: SearchResults, name:"searchResults"},
   { path: "/show/:id", component: ShowDetails}
 ];
 

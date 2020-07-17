@@ -13,9 +13,13 @@ export default {
   name: "AppHeader",
   components: { SearchField },
   methods: {
-    searchShow: function(showName) {      
-      this.$router.push("/search/" + showName);
-      this.$router.go();
+    searchShow: function(showName) { 
+      if( this.$route.name === 'searchResults'){
+        this.$router.push("/search/" + showName);
+        this.$store.dispatch("GET_SHOW_DETAILS_BY_NAME", showName);
+      }else{
+        this.$router.push("/search/" + showName);
+      }
     }
   }
 };

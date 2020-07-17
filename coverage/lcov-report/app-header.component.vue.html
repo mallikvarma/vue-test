@@ -31,14 +31,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -115,21 +115,7 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,22 +131,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -206,9 +178,9 @@
     &lt;header&gt;
       &lt;div class="logo"&gt;
         &lt;img src="../assets/tv.png"&gt;
-        Top Rated Shows
+        Popular TV Shows
       &lt;/div&gt;
-      &lt;SearchField  @onSearch="searchShow" :style="{display:showSearch}" class="no-show"/&gt;   
+      &lt;SearchField  @onSearch="searchShow" /&gt;   
     &lt;/header&gt;
 &lt;/template&gt;
 &lt;script&gt;
@@ -216,14 +188,10 @@ import SearchField from "./search.component.vue";
 export default {
   name: "AppHeader",
   components: { SearchField },
-  computed: {
-    showSearch: function() {
-      return this.$route.name === "showDetails" ? "none" : "block";
-    }
-  },
   methods: {
     searchShow: function(showName) {      
-      this.$router.push("/show/" + showName);
+      this.$router.push("/search/" + showName);
+      this.$router.go();
     }
   }
 };
@@ -236,22 +204,15 @@ export default {
     height: 80px;
     display: flex;
     align-items: center;
-    background-color: #efecec;
-    background: linear-gradient(
-      90deg,
-      #d9d9dd 0%,
-      #ebebee 66%,
-      #fafafb 78%,
-      #ffffff 100%
-    );
-&nbsp;
+    background-color: #189ca2;
+    
     .logo {
       display: flex;
       align-items: center;
       font-size: 1.5em;
       font-family: sans-serif;
-      color: #000000;
-      text-shadow: 2px 2px 17px #2b1010;
+      color: #13161b;
+      text-shadow: 2px 2px 12px #fffdfd;
       img {
         width: 50px;
         height: auto;
@@ -259,18 +220,15 @@ export default {
     }
   }
 &nbsp;
-  @media only screen and (max-width: 640px) {
+ 
+  @media only screen and (max-width: 500px) {
     header {
+      height: 50px;
       .logo{
-        font-size: 1em;
-      }  
-    }
-  }
-&nbsp;
-  @media only screen and (max-width: 368px) {
-    header {
-      .no-show {
-        display: none !important;
+        font-size: 1rem;
+        img {
+          width: 30px;
+        }
       }
     }
   }
@@ -282,7 +240,7 @@ export default {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jul 15 2020 15:29:23 GMT+0530 (India Standard Time)
+                at Fri Jul 17 2020 16:54:44 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>

@@ -16,7 +16,7 @@ describe('show.component.vue', () => {
         showObj  = {
             id: 1,
             name: "God Father",
-            rating: '9.1',
+            rating: 9.1,
             image:''
         }
       
@@ -34,7 +34,7 @@ describe('show.component.vue', () => {
         const wrapper = mount(Show, {
             propsData: showObj
         })
-        expect(wrapper.find('.rating').text()).toBe('9.1')    
+        expect(wrapper.find('.rating').text()).toBe("9.1")    
     })
 
 
@@ -42,6 +42,7 @@ describe('show.component.vue', () => {
 
         const routes = [
             { path: "/", name: "home" },
+            { path: "/search/:name"},
             { path: "/show/:id", name: "showDetails" }
           ];
 
