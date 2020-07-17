@@ -87,7 +87,8 @@ export default {
         margin-right: 20px;
       }
       .show-img {
-        width: 250px;
+        height: 400px;
+        margin-top: 20px;
       }
       .show-info {
         .info {
@@ -105,7 +106,7 @@ export default {
             border: 0.5px solid gray;
           }
           .casting {
-            width: 80%;
+            width: 90%;
             .cast-title{
               font-size: 1.2rem;
               margin-left: 10px;
@@ -123,8 +124,24 @@ export default {
     }
   }
 
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: 768px) {
+    .show-details-main {
+      .show-data {
+        display: block;
+        text-align: center;
+        .show-info {
+          .info {
+            .casting{
+              width: 95%;
+            }
+          }
+        }
 
+        .show-desc{
+          text-align: left;
+        }
+      }
+    }
   }
 
 </style>

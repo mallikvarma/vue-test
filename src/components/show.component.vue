@@ -1,6 +1,6 @@
 <template>
   <div class="show" @click="showDetails">
-    <img :src="image" @error="onImageLoadError($event)">
+    <img :src="image" @error="onImageLoadError($event)" class="poster">
     <div class="show-info-container">
       <span>{{name}}</span>
       <div class="rating" v-if="rating && rating > 0">
@@ -58,5 +58,17 @@ export default {
     }
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .show {
+    width: 150px;
+    .poster {
+      width: 150px;
+    }
+  }
+}
+
+
+
 </style>
 

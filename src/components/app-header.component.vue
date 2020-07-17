@@ -45,8 +45,16 @@ export default {
   }
 
  
-  @media only screen and (max-width: 368px) {
-
+  @media only screen and (max-width: 500px) {
+    header {
+      height: 50px;
+      .logo{
+        font-size: 1rem;
+        img {
+          width: 30px;
+        }
+      }
+    }
   }
 
 </style>
