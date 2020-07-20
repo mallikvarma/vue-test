@@ -45,7 +45,7 @@ describe('shows.component.vue', () => {
 
 
   it('Should call store action getTopShows after mounted', () => {    
-    const wrapper = mount(TopShows, {store, localVue})
+    mount(TopShows, {store, localVue})
     expect(actions.GET_TOP_SHOWS).toHaveBeenCalled()
   })
 

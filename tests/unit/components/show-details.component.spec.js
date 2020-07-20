@@ -35,7 +35,7 @@ describe('show-details.component.vue', () => {
         const $route = {
             params: {id: '1'}
           }
-          const wrapper = mount(ShowDetails, {
+          mount(ShowDetails, {
             mocks: {
               $route
             },

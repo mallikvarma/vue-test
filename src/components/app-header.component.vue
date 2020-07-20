@@ -1,7 +1,7 @@
 <template>
     <header>
       <div class="logo">
-        <img src="../assets/tv.png">
+        <img src="../assets/tv.png" alt="tv icon">
         Popular TV Shows
       </div>
       <SearchField  @onSearch="searchShow" />   
@@ -30,7 +30,6 @@ export default {
     display: flex;
     justify-content: space-between;
     height: 80px;
-    display: flex;
     align-items: center;
     background-color: #189ca2;
     

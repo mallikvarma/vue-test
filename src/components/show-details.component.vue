@@ -2,12 +2,12 @@
   <div class="show-details-main" v-if="activeShow">
     <div class="title">      
       <div class="back-btn" @click="$router.go(-1)">
-        <img src="../assets/back.png">
+        <img src="../assets/back.png" alt="back button">
         back
       </div>
     </div>
     <div class="show-data">
-      <img class="show-img" @error="onImageLoadError($event)" :src="activeShow.right.image.original" v-if="activeShow.right.image && activeShow.right.image.original">
+      <img class="show-img" @error="onImageLoadError($event)" :src="activeShow.right.image.original" v-if="activeShow.right.image && activeShow.right.image.original" alt="show poster">
       <div class="show-desc" >
         <div v-html="activeShow.right.summary"></div>        
         <div class="show-info">
@@ -15,14 +15,14 @@
               <template v-for="(value, propertyName) in activeShow.left" >
                 <div class="data" v-bind:key="propertyName"  v-if="propertyName && value && value !==0">
                   {{propertyName}}:
-                  <b>{{value}}</b>
+                  <strong>{{value}}</strong>
                 </div>  
               </template>
 
                 <div class="casting" v-if="activeShow.right._embedded.cast && activeShow.right._embedded.cast.length > 0">
                   <div class="cast-title">Cast</div>
                   <template v-for="(cast, index) in activeShow.right._embedded.cast" >
-                     <img @error="onImageLoadError($event)" :src="cast.person.image.medium"  v-bind:key="index" v-if="cast.person.image && cast.person.image.medium">
+                     <img @error="onImageLoadError($event)" alt="actor" :src="cast.person.image.medium"  v-bind:key="index" v-if="cast.person.image && cast.person.image.medium">
                   </template>
                 </div>
 
@@ -58,7 +58,7 @@ export default {
       height: 100%;
     .title {
       font-size: 2rem;
-      font-family: Arial;
+      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
       color: #e0b8b4;
       padding: 10px;
       padding-left: 0px;
@@ -83,7 +83,7 @@ export default {
       display: flex;
       height: 100%;
       > * {
-        font-family: 'Arial';
+        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
         margin-right: 20px;
       }
       .show-img {

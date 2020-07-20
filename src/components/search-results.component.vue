@@ -2,7 +2,7 @@
     <div class="search-results-main">
         <div class="title">      
             <div class="back-btn" @click="$router.push('/')">
-                <img src="../assets/back.png">
+                <img src="../assets/back.png" alt="back button">
                 Home
             </div>
         </div>
@@ -36,7 +36,7 @@ export default {
 .search-results-main {
     .title {
       font-size: 2rem;
-      font-family: Arial;
+      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
       color: #e0b8b4;
       padding: 10px;
       padding-left: 0px;

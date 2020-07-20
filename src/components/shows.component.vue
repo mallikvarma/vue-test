@@ -35,7 +35,7 @@ export default {
 .shows-main {
   .genre{ 
     font-size: 1.2rem;
-    font-family: sans-serif;
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
     color: #0a4143;
     margin-left: 5px;
     padding-left: 5px;
@@ -50,8 +50,6 @@ export default {
 
 }
 
-@media only screen and (max-width: 640px) {
 
-}
 </style>
 

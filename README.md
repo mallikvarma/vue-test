@@ -12,6 +12,9 @@ npm run build
 // To run unit tests with coverage
 npm run test:unit
 
+// To run sonarqube (assuming sonarqube and sonar scanner are installed)
+npm run sonar
+
 
 
 ## Architectural Decisions

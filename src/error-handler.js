@@ -24,6 +24,7 @@ axios.interceptors.response.use((response) => {
     }
     return response;
   }, (error) => {
+    alert('Network Error: Please check your Internet connection and VPN')
     console.error("HTTP RESPONSE ERROR: ", error);
     return Promise.reject(error.message);
   });

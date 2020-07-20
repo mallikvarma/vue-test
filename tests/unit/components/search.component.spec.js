@@ -1,4 +1,4 @@
-import { mount , createLocalVue } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import Vue from "vue";
 import SearchField from '@/components/search.component.vue'
 

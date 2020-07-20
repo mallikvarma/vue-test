@@ -1,10 +1,10 @@
 <template>
   <div class="show" @click="showDetails">
-    <img :src="image" @error="onImageLoadError($event)" class="poster">
+    <img :src="image" @error="onImageLoadError($event)" class="poster" alt="show poster">
     <div class="show-info-container">
       <span>{{name}}</span>
       <div class="rating" v-if="rating && rating > 0">
-        <img src="../assets/star.png" >
+        <img src="../assets/star.png" alt="rating">
         {{rating}}
       </div>
     </div>
@@ -39,7 +39,7 @@ export default {
     display: flex;
     justify-content: space-between;
     font-size: 0.9em;
-    font-family: arial;
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
     padding: 3px;
     background-color: #0d5b5f;
     color: #fffdfd;

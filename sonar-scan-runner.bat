@@ -1,0 +1,1 @@
+C:\sonar-scanner\bin\sonar-scanner.bat -D"sonar.projectKey=abn_amro_vue_test" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.login=29bd5ebb9259c34b3f88512eb936ebf2f17f8109"   
