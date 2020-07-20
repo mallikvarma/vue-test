@@ -13,6 +13,12 @@ export default {
   name: "AppHeader",
   components: { SearchField },
   methods: {
+  /**
+   *  search for show. If in same route, then
+   *  dispatch store action if not simply navigate to search route
+   * 
+   * @param showName - name of the show to search 
+   */
     searchShow: function(showName) { 
       if( this.$route.name === 'searchResults'){
         this.$router.push("/search/" + showName);

@@ -28,6 +28,7 @@ export default {
     components: { Show },
     computed: mapState(["searchResults"]),
     mounted: function() {
+        // get all the toprates shows after mounted
         this.$store.dispatch("GET_SHOW_DETAILS_BY_NAME", this.$route.params.name);
     }
 }

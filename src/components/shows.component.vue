@@ -27,6 +27,7 @@ export default {
   components: { Show },
   computed: mapState(["shows"]),
   mounted: function() {
+    // get all Topshows from store after mounted
     this.$store.dispatch("GET_TOP_SHOWS");
   }
 };

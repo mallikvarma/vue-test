@@ -42,6 +42,7 @@ export default {
   computed: mapState(["activeShow"]),
   data: function(){
     return {
+      // this is refered from 'imageErrHander' mixin for removing image
        mixinHint: 'elementLevel'
     }
   },

@@ -2,7 +2,7 @@ import showsService from "../services/shows.service.js";
 
 export default {
   /**
-   * get all the shows from API and filters by highest rating
+   * Get all the shows from API and the filter shows by rating
    * 
    * @param state 
    */
@@ -28,7 +28,7 @@ export default {
     );
   },
   /**
-   * sets the active show to be displayed in details screen, by showId
+   * Sets the active show to be displayed in details screen, by showId
    * 
    * @param  state 
    * @param  showId 

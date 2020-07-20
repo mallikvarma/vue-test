@@ -23,6 +23,9 @@ export default {
       id: Number 
       },
   methods: {
+  /**
+   *  Navigate to show route upon clicking on the show
+   */
     showDetails: function() {
       this.$router.push("/show/" + this.id);
     }

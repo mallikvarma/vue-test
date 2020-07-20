@@ -15,6 +15,11 @@ export default {
     };
   },
   methods: {
+   /**
+   *  Trigger 'onSearch' event if show name is keyed in.
+   *  if not show error
+   * 
+   */
     searchShow: function() {
       if (this.showName) {      
         this.error = false;  
