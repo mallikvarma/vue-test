@@ -26,6 +26,7 @@ npm run sonar
 
 ## Supported Browsers
 • Chrome
+• IE 11
 
 ## Supported Devices
 • Desktop
