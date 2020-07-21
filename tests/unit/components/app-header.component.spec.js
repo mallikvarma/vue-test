@@ -17,16 +17,7 @@ describe('app-header.component.vue', () => {
           GET_SHOW_DETAILS_BY_NAME: jest.fn()
         }
         store = new Vuex.Store({
-          state: {
-            shows: {
-               drama: [],
-               action: [],
-               comedy: [],
-               horror: []
-            },
-            activeShow: null,
-            searchResults: []
-          },
+          state: { },
           actions
         })    
       })
