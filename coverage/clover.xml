@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1595324204350" clover="3.2.0">
-  <project timestamp="1595324204350" name="All files">
-    <metrics statements="25" coveredstatements="25" conditionals="8" coveredconditionals="8" methods="9" coveredmethods="9" elements="42" coveredelements="42" complexity="0" loc="25" ncloc="25" packages="2" files="7" classes="7"/>
+<coverage generated="1595344845189" clover="3.2.0">
+  <project timestamp="1595344845189" name="All files">
+    <metrics statements="56" coveredstatements="56" conditionals="28" coveredconditionals="28" methods="24" coveredmethods="24" elements="108" coveredelements="108" complexity="0" loc="56" ncloc="56" packages="4" files="11" classes="11"/>
     <package name="components">
       <metrics statements="22" coveredstatements="22" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="8"/>
       <file name="app-header.component.vue" path="C:\Users\MACHITTA\Desktop\vue-test\src\components\app-header.component.vue">
@@ -52,6 +52,55 @@
         <line num="10" count="2" type="cond" truecount="4" falsecount="0"/>
         <line num="11" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="shows.service.js" path="C:\Users\MACHITTA\Desktop\vue-test\src\services\shows.service.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="store">
+      <metrics statements="25" coveredstatements="25" conditionals="20" coveredconditionals="20" methods="12" coveredmethods="12"/>
+      <file name="actions.js" path="C:\Users\MACHITTA\Desktop\vue-test\src\store\actions.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+      <file name="mutations.js" path="C:\Users\MACHITTA\Desktop\vue-test\src\store\mutations.js">
+        <metrics statements="22" coveredstatements="22" conditionals="20" coveredconditionals="20" methods="9" coveredmethods="9"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="7" type="stmt"/>
+        <line num="16" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="6" type="cond" truecount="4" falsecount="0"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="3" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+      </file>
+      <file name="state.js" path="C:\Users\MACHITTA\Desktop\vue-test\src\store\state.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
   </project>
