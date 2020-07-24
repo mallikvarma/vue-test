@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1595344845189" clover="3.2.0">
-  <project timestamp="1595344845189" name="All files">
+<coverage generated="1595602481051" clover="3.2.0">
+  <project timestamp="1595602481051" name="All files">
     <metrics statements="56" coveredstatements="56" conditionals="28" coveredconditionals="28" methods="24" coveredmethods="24" elements="108" coveredelements="108" complexity="0" loc="56" ncloc="56" packages="4" files="11" classes="11"/>
     <package name="components">
       <metrics statements="22" coveredstatements="22" conditionals="4" coveredconditionals="4" methods="8" coveredmethods="8"/>
@@ -14,9 +14,9 @@
       </file>
       <file name="search-results.component.vue" path="C:\Users\MACHITTA\Desktop\vue-test\src\components\search-results.component.vue">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="32" count="3" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
       </file>
       <file name="search.component.vue" path="C:\Users\MACHITTA\Desktop\vue-test\src\components\search.component.vue">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
@@ -28,10 +28,10 @@
       </file>
       <file name="show-details.component.vue" path="C:\Users\MACHITTA\Desktop\vue-test\src\components\show-details.component.vue">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
       </file>
       <file name="show.component.vue" path="C:\Users\MACHITTA\Desktop\vue-test\src\components\show.component.vue">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

@@ -6,7 +6,7 @@
         back
       </div>
     </div>
-    <div class="show-data">
+    <div class="show-data" v-if="activeShow"> 
       <img class="show-img" @error="onImageLoadError($event)" :src="activeShow.right.image.original" v-if="activeShow.right.image && activeShow.right.image.original" alt="show poster">
       <div class="show-desc" >
         <div v-html="activeShow.right.summary"></div>        
@@ -30,6 +30,7 @@
         </div>
       </div>
     </div>
+    <div class="show-data-error" v-if="!activeShow">No Data Found!</div>
   </div>
 </template>
 <script>
@@ -122,6 +123,11 @@ export default {
           }
         }
       }
+    }
+    .show-data-error{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 1.2rem;
+      color: red;
     }
   }
 

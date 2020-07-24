@@ -15,6 +15,8 @@
             :id="show.id"
             v-for="show in searchResults"
             v-bind:key="show.id" > {{ show }} </Show>   
+
+            <div v-if="searchResults.length==0" class="no-results">No Results Found!</div>
         </div> 
     </div>
 </template>
@@ -61,6 +63,11 @@ export default {
     .shows-container {
       display: flex;
       flex-wrap: wrap;
+      .no-results {
+        font-family: Arial;
+        color: red;
+        font-size: 1.2em;
+      }
 
       .show {
           margin-bottom: 10px;

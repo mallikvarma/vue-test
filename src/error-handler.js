@@ -1,5 +1,6 @@
 import Vue from "vue";
 import axios from "axios";
+import router from "./router";
 
 /**
  * Handling errors accross the applicaiton here
@@ -18,14 +19,27 @@ Vue.config.errorHandler = (err, vm, info) => {
  * 
  * @param response
  */
-axios.interceptors.response.use((response) => {  
-    if(response.status === 401) {
-         alert("You are not authorized");
-    }
+axios.interceptors.response.use((response) => {      
     return response;
   }, (error) => {
-    alert('Network Error: Please check your Internet connection and VPN')
-    console.error("HTTP RESPONSE ERROR: ", error);
+
+    let errorMsg = 'Ummm..Seems to be Invalid URL OR No Network!';
+
+    if ( error && error.response && error.response.status ){
+      switch(error.response.status){
+        case 404:
+           errorMsg = "Page Not Found";
+        break;
+        case 401:
+          errorMsg = "Unauthorized";
+        break;
+        case 500:
+          errorMsg = "Something wrong with the server. Try later.";
+        break;
+      }
+    }
+    
+    router.push(`/errors?message=${errorMsg}`);
     return Promise.reject(error.message);
   });
   
