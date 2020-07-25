@@ -64,7 +64,7 @@ export default {
       display: flex;
       flex-wrap: wrap;
       .no-results {
-        font-family: Arial;
+        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
         color: red;
         font-size: 1.2em;
       }
