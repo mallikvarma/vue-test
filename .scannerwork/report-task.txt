@@ -2,5 +2,5 @@ projectKey=abn_amro_vue_test
 serverUrl=http://localhost:9000
 serverVersion=8.4.1.35646
 dashboardUrl=http://localhost:9000/dashboard?id=abn_amro_vue_test
-ceTaskId=AXOFPAr_5kdiADFdRGDf
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXOFPAr_5kdiADFdRGDf
+ceTaskId=AXOFTbDh5kdiADFdRGDg
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXOFTbDh5kdiADFdRGDg
