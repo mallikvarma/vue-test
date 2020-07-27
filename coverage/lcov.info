@@ -7,10 +7,9 @@ FNDA:2,(anonymous_1)
 DA:11,1
 DA:23,2
 DA:24,1
-DA:25,1
-DA:27,1
-LF:5
-LH:5
+DA:26,2
+LF:4
+LH:4
 BRDA:23,0,0,1
 BRDA:23,0,1,1
 BRF:2

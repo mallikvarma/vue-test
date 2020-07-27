@@ -14,7 +14,7 @@
             <div class="info">
               <template v-for="(value, propertyName) in activeShow.left" >
                 <div class="data" v-bind:key="propertyName"  v-if="propertyName && value && value !==0">
-                  {{propertyName}}:
+                  <span>{{propertyName}}:</span>
                   <strong>{{value}}</strong>
                 </div>  
               </template>
@@ -60,7 +60,6 @@ export default {
       height: 100%;
     .title {
       font-size: 2rem;
-      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
       color: #e0b8b4;
       padding: 10px;
       padding-left: 0px;
@@ -85,7 +84,6 @@ export default {
       display: flex;
       height: 100%;
       > * {
-        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
         margin-right: 20px;
       }
       .show-img {
@@ -106,9 +104,12 @@ export default {
             border-radius: 5px;
             padding: 5px;
             border: 0.5px solid gray;
+            > span {
+              text-transform: uppercase;
+            }
           }
           .casting {
-            width: 90%;
+            width: 95%;
             .cast-title{
               font-size: 1.2rem;
               margin-left: 10px;
@@ -125,7 +126,6 @@ export default {
       }
     }
     .show-data-error{
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       font-size: 1.2rem;
       color: red;
     }

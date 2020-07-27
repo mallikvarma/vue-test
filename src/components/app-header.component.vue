@@ -1,6 +1,6 @@
 <template>
     <header>
-      <div class="logo">
+      <div class="logo" @click="$router.push('/')">
         <img src="../assets/tv.png" alt="tv icon">
         Popular TV Shows
       </div>
@@ -19,13 +19,12 @@ export default {
    * 
    * @param showName - name of the show to search 
    */
-    searchShow: function(showName) { 
+    searchShow: function(showName) {
       if( this.$route.name === 'searchResults'){
-        this.$router.push("/search/" + showName);
         this.$store.dispatch("GET_SHOW_DETAILS_BY_NAME", showName);
-      }else{
-        this.$router.push("/search/" + showName);
       }
+      this.$router.push("/search/" + showName); 
+
     }
   }
 };
@@ -43,9 +42,9 @@ export default {
       display: flex;
       align-items: center;
       font-size: 1.5em;
-      font-family: sans-serif;
       color: #13161b;
       text-shadow: 2px 2px 12px #fffdfd;
+      cursor: pointer;
       img {
         width: 50px;
         height: auto;

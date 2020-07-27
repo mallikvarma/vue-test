@@ -23,7 +23,6 @@ export default {
 
     .title {
       font-size: 2rem;
-      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
       color: #e0b8b4;
       padding: 10px;
       padding-left: 0px;
@@ -46,7 +45,6 @@ export default {
     }
 
     .error-msg{
-        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
         color: red;
         font-size: 2rem;
         display: flex;

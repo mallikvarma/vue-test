@@ -4,7 +4,7 @@
     <div class="app-content">
       <router-view></router-view>
     </div>
-    <footer>Developed by Mallik</footer>
+    <footer> Capgemini </footer>
   </div>
 </template>
 
@@ -30,6 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: auto;
+  font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
 
   .app-content{
      flex: 1;
@@ -43,7 +44,6 @@ body {
     background-color: #353131;
     color: #a0a6a7;
     font-size: 0.7em;
-    font-family: sans-serif;
     display: flex;
     align-items: center;
   }

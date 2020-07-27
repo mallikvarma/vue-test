@@ -42,7 +42,6 @@ export default {
     display: flex;
     justify-content: space-between;
     font-size: 0.9em;
-    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
     padding: 3px;
     background-color: #0d5b5f;
     color: #fffdfd;

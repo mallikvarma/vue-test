@@ -38,8 +38,7 @@ export default {
 <style lang="less">
 .search-results-main {
     .title {
-      font-size: 2rem;
-      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+      font-size: 2rem;      
       color: #e0b8b4;
       padding: 10px;
       padding-left: 0px;
@@ -64,7 +63,6 @@ export default {
       display: flex;
       flex-wrap: wrap;
       .no-results {
-        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
         color: red;
         font-size: 1.2em;
       }

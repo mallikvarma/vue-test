@@ -42,7 +42,6 @@ export default {
     }
 
     a {
-      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
       background-color: #f3ea88;
       color: #334632;
       padding: 5px;
@@ -57,7 +56,6 @@ export default {
     .error {
       color: white;
       display: block;
-      font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
       font-size: 0.8em;
       margin-top: 3px;
     }

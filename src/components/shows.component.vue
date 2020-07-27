@@ -32,11 +32,11 @@ export default {
   }
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
+
 .shows-main {
   .genre{ 
     font-size: 1.2rem;
-    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
     color: #0a4143;
     margin-left: 5px;
     padding-left: 5px;
