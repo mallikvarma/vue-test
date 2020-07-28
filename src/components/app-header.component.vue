@@ -20,10 +20,11 @@ export default {
    * @param showName - name of the show to search 
    */
     searchShow: function(showName) {
-      if( this.$route.name === 'searchResults'){
-        this.$store.dispatch("GET_SHOW_DETAILS_BY_NAME", showName);
-      }
       this.$router.push("/search/" + showName); 
+      if( this.$route.name === 'searchResults'){
+        this.$store.dispatch("SEARCH_SHOWS", showName);
+      }
+      
 
     }
   }

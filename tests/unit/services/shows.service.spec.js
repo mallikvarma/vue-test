@@ -24,7 +24,7 @@ jest.mock('axios');
     it("Should call correct URL when called getShowDetailsByName()", ()=>{
         const data = '';
         axios.get.mockImplementationOnce(() => Promise.resolve(data));     
-        ShowService.getShowDetailsByName("god");
+        ShowService.searchShows("god");
         expect(axios.get).toHaveBeenCalledWith('/search/shows?q=god');
     })
 

@@ -18,7 +18,7 @@ describe("search-results.component.vue", ()=>{
   
     beforeEach(() => {
       actions = {
-        GET_SHOW_DETAILS_BY_NAME: jest.fn()
+        SEARCH_SHOWS: jest.fn()
       }
       store = new Vuex.Store({
         state:{searchResults: [
@@ -56,7 +56,7 @@ describe("search-results.component.vue", ()=>{
   
 
     it("Should disptach store action on mounted with search param", ()=>{
-        expect(actions.GET_SHOW_DETAILS_BY_NAME).toHaveBeenCalled()
+        expect(actions.SEARCH_SHOWS).toHaveBeenCalled()
     })
 
 

@@ -18,13 +18,12 @@
                   <strong>{{value}}</strong>
                 </div>  
               </template>
-
-                <div class="casting" v-if="activeShow.right._embedded.cast && activeShow.right._embedded.cast.length > 0">
-                  <div class="cast-title">Cast</div>
-                  <template v-for="(cast, index) in activeShow.right._embedded.cast" >
-                     <img @error="onImageLoadError($event)" alt="actor" :src="cast.person.image.medium"  v-bind:key="index" v-if="cast.person.image && cast.person.image.medium">
-                  </template>
-                </div>
+              <div class="cast-title">Cast</div>
+              <div class="casting" v-if="activeShow.right._embedded.cast && activeShow.right._embedded.cast.length > 0">                  
+                <template v-for="(cast, index) in activeShow.right._embedded.cast" >
+                    <img @error="onImageLoadError($event)" alt="actor" :src="cast.person.image.medium"  v-bind:key="index" v-if="cast.person.image && cast.person.image.medium">
+                </template>
+              </div>
 
             </div>
         </div>
@@ -96,6 +95,12 @@ export default {
           background-color: #bfdfe0;
           border-radius: 10px;
           padding: 10px;
+          .cast-title{
+              font-size: 1.2rem;
+              margin-left: 19px;
+              margin-top: 22px;
+              margin-bottom: 10px;
+          }
           .data{
             display: inline-block;
             opacity: 0.7;
@@ -109,12 +114,7 @@ export default {
             }
           }
           .casting {
-            width: 95%;
-            .cast-title{
-              font-size: 1.2rem;
-              margin-left: 10px;
-              margin-top: 22px;
-            }
+            text-align: center;
             img{
               height: 140px;
               border: 1px solid white;
@@ -136,14 +136,6 @@ export default {
       .show-data {
         display: block;
         text-align: center;
-        .show-info {
-          .info {
-            .casting{
-              width: 95%;
-            }
-          }
-        }
-
         .show-desc{
           text-align: left;
         }

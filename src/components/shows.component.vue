@@ -13,7 +13,6 @@
                   v-bind:key="show.id" > {{ show }} </Show>   
               </div> 
               <br>
-              <br>
           </div>
     </template>
   </div>
@@ -35,6 +34,8 @@ export default {
 <style lang="less" scoped>
 
 .shows-main {
+  width: 87%;
+  margin: 0 auto;
   .genre{ 
     font-size: 1.2rem;
     color: #0a4143;
@@ -46,10 +47,19 @@ export default {
 
   .shows-container{
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: scroll;
   }
 
 }
+
+
+@media only screen and (max-width: 360px) {
+  .shows-main {
+    width: 92%;
+  }
+}
+
+
 
 
 </style>

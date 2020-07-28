@@ -67,4 +67,12 @@ export default {
     margin-right: 10px;
   }
 }
+
+@media only screen and (max-width: 320px) {
+  .search {
+    input {
+      width: 100px;
+    }
+  }
+}
 </style>

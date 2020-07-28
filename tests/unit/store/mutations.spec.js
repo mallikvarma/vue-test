@@ -44,7 +44,7 @@ describe("Store actions", ()=>{
         
         axios.get.mockImplementationOnce(() => Promise.resolve({data:apiResult}));     
         let _state = {searchResults:null}  
-        mutations.updateActiveShowByName(_state, "nna")
+        mutations.updateSearchResults(_state, "nna")
         setTimeout(()=>{
             expect(_state.searchResults).toEqual(expected)
             done();
@@ -70,7 +70,7 @@ describe("Store actions", ()=>{
           // { id: 7, name: "Anibie", rating:8.7,  image:{}},
           // { id: 2, name: "hanna", rating:8.4,  image:{}},
           { id: 1, name: "Jack ryan", rating:8.2,  image:{}},
-          { id: 8, name: "Honeywell", rating:'',  image:""}
+          { id: 8, name: "Honeywell", rating:0,  image:""}
           
         ], action:[
           { id: 6, name: "Fearful", rating:8.4,  image:{}},

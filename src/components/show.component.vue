@@ -2,7 +2,7 @@
   <div class="show" @click="showDetails">
     <img :src="image" @error="onImageLoadError($event)" class="poster" alt="show poster">
     <div class="show-info-container">
-      <span>{{name}}</span>
+      <span>{{ (name && name.length > 17) ? name.substring(0, 17)+"..." : name }}</span>
       <div class="rating" v-if="rating && rating > 0">
         <img src="../assets/star.png" alt="rating">
         {{rating}}
@@ -64,6 +64,9 @@ export default {
 @media only screen and (max-width: 640px) {
   .show {
     width: 150px;
+    .show-info-container{
+      font-size: 0.7em;
+    }
     .poster {
       width: 150px;
     }

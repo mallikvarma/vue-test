@@ -7,8 +7,8 @@ export default {
       store.commit("updateActiveShow", params);
     },
   
-    GET_SHOW_DETAILS_BY_NAME: function(store, showName) {
-      store.commit("updateActiveShowByName", showName);
+    SEARCH_SHOWS: function(store, showName) {
+      store.commit("updateSearchResults", showName);
     }
   };
   

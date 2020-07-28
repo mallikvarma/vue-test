@@ -17,7 +17,7 @@ class ShowsService {
     return axios.get(`${this.allShowsUrl}/${id}?embed=cast`);
   }
 
-  getShowDetailsByName(showName) {
+  searchShows(showName) {
     return axios.get(this.showLookUpUrl + showName);
   }
 }

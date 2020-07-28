@@ -17,7 +17,7 @@ describe("Store actions", ()=>{
         mutations = {
            updateShows: jest.fn(),
            updateActiveShow: jest.fn(),
-           updateActiveShowByName: jest.fn()
+           updateSearchResults: jest.fn()
         }
         store = new Vuex.Store({
           state,
@@ -38,8 +38,8 @@ describe("Store actions", ()=>{
       })
 
       it('Should call updateActiveShowByName mutation when dispatched GET_SHOW_DETAILS_BY_NAME', () => {    
-        store.dispatch('GET_SHOW_DETAILS_BY_NAME')  
-        expect(mutations.updateActiveShowByName).toHaveBeenCalled()
+        store.dispatch('SEARCH_SHOWS')  
+        expect(mutations.updateSearchResults).toHaveBeenCalled()
       })
 
 })

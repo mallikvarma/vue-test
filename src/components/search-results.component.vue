@@ -31,7 +31,7 @@ export default {
     computed: mapState(["searchResults"]),
     mounted: function() {
         // get all the toprates shows after mounted
-        this.$store.dispatch("GET_SHOW_DETAILS_BY_NAME", this.$route.params.name);
+        this.$store.dispatch("SEARCH_SHOWS", this.$route.params.name);
     }
 }
 </script>
@@ -59,9 +59,17 @@ export default {
         }
       }
     }
+    h3{
+      width: 88%;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
     .shows-container {
       display: flex;
       flex-wrap: wrap;
+      width: 88%;
+      margin: 0 auto;
       .no-results {
         color: red;
         font-size: 1.2em;
@@ -71,6 +79,23 @@ export default {
           margin-bottom: 10px;
       }
     }
+}
+
+
+@media only screen and (max-width: 360px) {
+  .search-results-main {
+    .shows-container, h3{
+      width: 94%;
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .search-results-main, h3 {
+    .shows-container{
+      width: 60%;
+    }
+  }
 }
 
 </style>
