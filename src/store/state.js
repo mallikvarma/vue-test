@@ -6,6 +6,7 @@ export default {
        horror: []
     },
     activeShow: null,
-    searchResults: []
+    searchResults: [],
+    showLoader: false
   };
   

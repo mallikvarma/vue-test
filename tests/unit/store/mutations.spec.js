@@ -66,9 +66,7 @@ describe("Store actions", ()=>{
           { id: 7, name: "Anibie", rating: {average:8.7},  image:{}, genres:[] },
           { id: 8, name: "Honeywell", rating: {average:null},  image:null, genres:["drama", "action"] }
         ]
-        let expected = {drama:[ 
-          // { id: 7, name: "Anibie", rating:8.7,  image:{}},
-          // { id: 2, name: "hanna", rating:8.4,  image:{}},
+        let expected = { drama:[ 
           { id: 1, name: "Jack ryan", rating:8.2,  image:{}},
           { id: 8, name: "Honeywell", rating:0,  image:""}
           
@@ -89,6 +87,16 @@ describe("Store actions", ()=>{
         }, 500)
         
       })
+
+
+
+      it('Should be able to set loader status',  () => {
+        let _state = {showLoader:false}  
+        mutations.toggleLoader(_state, true)
+        expect(_state.showLoader).toBe(true)        
+      })
+
+
 
 
 

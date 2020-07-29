@@ -1,6 +1,7 @@
 import Vue from "vue";
 import axios from "axios";
 import router from "./router";
+import store from "./store";
 
 /**
  * Handling errors accross the applicaiton here
@@ -13,6 +14,18 @@ Vue.config.errorHandler = (err, vm, info) => {
   console.log(vm + "/ "+ info + ":: " + err)
 };
 
+/**
+ * handling http request globally
+ * 
+ * @param config
+ */
+axios.interceptors.request.use(function (config) {
+  store.dispatch("TOGGLE_LOADER", true)
+  return config;
+}, function (error) {  
+  return Promise.reject(error);
+});
+
 
 /**
  * Handling HTTP errors  globally
@@ -20,11 +33,11 @@ Vue.config.errorHandler = (err, vm, info) => {
  * @param response
  */
 axios.interceptors.response.use((response) => {      
+    store.dispatch("TOGGLE_LOADER", false)
     return response;
   }, (error) => {
-
+    store.dispatch("TOGGLE_LOADER", false)
     let errorMsg = 'Ummm..Seems to be Invalid URL OR No Network!';
-
     if ( error && error.response && error.response.status ){
       switch(error.response.status){
         case 404:

@@ -9,6 +9,10 @@ export default {
   
     SEARCH_SHOWS: function(store, showName) {
       store.commit("updateSearchResults", showName);
+    },
+
+    TOGGLE_LOADER: function(store, action){
+      store.commit("toggleLoader", action)
     }
   };
   

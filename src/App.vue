@@ -4,15 +4,18 @@
     <div class="app-content">
       <router-view></router-view>
     </div>
+    <div class="loader" v-if="showLoader">Loading...</div>
     <footer> Capgemini </footer>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import AppHeader from "./components/app-header.component.vue";
 export default {
   name: "App",
-  components: { AppHeader }
+  components: { AppHeader },
+  computed: mapState(["showLoader"])
 };
 </script>
 
@@ -31,6 +34,18 @@ body {
   flex-direction: column;
   margin: auto;
   font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+
+  .loader {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
 
   .app-content{
      flex: 1;

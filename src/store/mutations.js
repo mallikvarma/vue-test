@@ -66,5 +66,14 @@ export default {
         state.searchResults = tempCol;
       }
     );
+  },
+  /**
+   * determine to show or hide the loader
+   * 
+   * @param state 
+   * @param action - true / false 
+   */
+  toggleLoader: function(state, action){
+    state.showLoader = action;
   }
 };

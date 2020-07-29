@@ -17,7 +17,8 @@ describe("Store actions", ()=>{
         mutations = {
            updateShows: jest.fn(),
            updateActiveShow: jest.fn(),
-           updateSearchResults: jest.fn()
+           updateSearchResults: jest.fn(),
+           toggleLoader: jest.fn()
         }
         store = new Vuex.Store({
           state,
@@ -40,6 +41,11 @@ describe("Store actions", ()=>{
       it('Should call updateActiveShowByName mutation when dispatched GET_SHOW_DETAILS_BY_NAME', () => {    
         store.dispatch('SEARCH_SHOWS')  
         expect(mutations.updateSearchResults).toHaveBeenCalled()
+      })
+
+      it('Should call toggleLoader mutation when dispatched TOGGLE_LOADER', () => {    
+        store.dispatch('TOGGLE_LOADER')  
+        expect(mutations.toggleLoader).toHaveBeenCalled()
       })
 
 })
