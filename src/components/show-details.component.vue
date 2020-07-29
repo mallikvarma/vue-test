@@ -114,7 +114,7 @@ export default {
             }
           }
           .casting {
-            text-align: center;
+            text-align: left;
             img{
               height: 140px;
               border: 1px solid white;

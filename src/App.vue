@@ -37,6 +37,18 @@ body {
      overflow: auto;
      margin: 10px;
      margin-right: 0px;
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #738b8c;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
   }
 
   footer {
