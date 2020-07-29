@@ -49,6 +49,9 @@ axios.interceptors.response.use((response) => {
         case 500:
           errorMsg = "Something wrong with the server. Try later.";
         break;
+        default:
+          errorMsg = 'Ummm..Seems to be Invalid URL OR No Network!';
+        break;
       }
     }
     
