@@ -85,4 +85,22 @@ body {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  #app{
+      .app-content{
+          &::-webkit-scrollbar {
+            width: inherit;
+          }
+          &::-webkit-scrollbar-track {
+            background:inherit;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: inherit;
+          }
+          &::-webkit-scrollbar-thumb:hover {
+            background: inherit;
+          }
+      }
+  }
+}
 </style>

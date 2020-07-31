@@ -15,10 +15,10 @@ describe("Store actions", ()=>{
 
      beforeEach(() => {
         mutations = {
-           updateShows: jest.fn(),
-           updateActiveShow: jest.fn(),
-           updateSearchResults: jest.fn(),
-           toggleLoader: jest.fn()
+           UPDATE_SHOWS: jest.fn(),
+           UPDATE_ACTIVE_SHOW: jest.fn(),
+           UPDATE_SEARCH_RESULTS: jest.fn(),
+           TOGGLE_LOADER: jest.fn()
         }
         store = new Vuex.Store({
           state,
@@ -28,24 +28,24 @@ describe("Store actions", ()=>{
       })
 
 
-      it('Should call updateShows mutation when dispatched GET_TOP_SHOWS', () => {    
-        store.dispatch('GET_TOP_SHOWS')  
-        expect(mutations.updateShows).toHaveBeenCalled()
+      it('Should call updateShows mutation when dispatched getTopShows', () => {    
+        store.dispatch('getTopShows')  
+        expect(mutations.UPDATE_SHOWS).toHaveBeenCalled()
       })
 
-      it('Should call updateActiveShow mutation when dispatched GET_SHOW_DETAILS', () => {    
-        store.dispatch('GET_SHOW_DETAILS')  
-        expect(mutations.updateActiveShow).toHaveBeenCalled()
+      it('Should call updateActiveShow mutation when dispatched getShowDetails', () => {    
+        store.dispatch('getShowDetails')  
+        expect(mutations.UPDATE_ACTIVE_SHOW).toHaveBeenCalled()
       })
 
-      it('Should call updateActiveShowByName mutation when dispatched GET_SHOW_DETAILS_BY_NAME', () => {    
-        store.dispatch('SEARCH_SHOWS')  
-        expect(mutations.updateSearchResults).toHaveBeenCalled()
+      it('Should call updateSearchResults mutation when dispatched searchShows', () => {    
+        store.dispatch('searchShows')  
+        expect(mutations.UPDATE_SEARCH_RESULTS).toHaveBeenCalled()
       })
 
-      it('Should call toggleLoader mutation when dispatched TOGGLE_LOADER', () => {    
-        store.dispatch('TOGGLE_LOADER')  
-        expect(mutations.toggleLoader).toHaveBeenCalled()
+      it('Should call toggleLoader mutation when dispatched toggleLoader', () => {    
+        store.dispatch('toggleLoader')  
+        expect(mutations.TOGGLE_LOADER).toHaveBeenCalled()
       })
 
 })

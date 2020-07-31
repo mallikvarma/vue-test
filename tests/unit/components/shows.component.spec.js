@@ -13,7 +13,7 @@ describe('shows.component.vue', () => {
 
   beforeEach(() => {
     actions = {
-      GET_TOP_SHOWS: jest.fn()
+      getTopShows: jest.fn()
     }
     store = new Vuex.Store({
       state:{shows: {
@@ -46,7 +46,7 @@ describe('shows.component.vue', () => {
 
   it('Should call store action getTopShows after mounted', () => {    
     mount(TopShows, {store, localVue})
-    expect(actions.GET_TOP_SHOWS).toHaveBeenCalled()
+    expect(actions.getTopShows).toHaveBeenCalled()
   })
 
   it('Should render the shows according to state of the store', () => {   

@@ -20,7 +20,7 @@ Vue.config.errorHandler = (err, vm, info) => {
  * @param config
  */
 axios.interceptors.request.use(function (config) {
-  store.dispatch("TOGGLE_LOADER", true)
+  store.dispatch("toggleLoader", true)
   return config;
 }, function (error) {  
   return Promise.reject(error);
@@ -33,10 +33,10 @@ axios.interceptors.request.use(function (config) {
  * @param response
  */
 axios.interceptors.response.use((response) => {      
-    store.dispatch("TOGGLE_LOADER", false)
+    store.dispatch("toggleLoader", false)
     return response;
   }, (error) => {
-    store.dispatch("TOGGLE_LOADER", false)
+    store.dispatch("toggleLoader", false)
     let errorMsg = 'Ummm..Seems to be Invalid URL OR No Network!';
     if ( error && error.response && error.response.status ){
       switch(error.response.status){

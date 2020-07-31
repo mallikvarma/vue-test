@@ -27,7 +27,7 @@ export default {
   computed: mapState(["shows"]),
   mounted: function() {
     // get all Topshows from store after mounted
-    this.$store.dispatch("GET_TOP_SHOWS");
+    this.$store.dispatch("getTopShows");
   }
 };
 </script>
@@ -61,7 +61,6 @@ export default {
       &::-webkit-scrollbar-thumb:hover {
         background: #555; 
       }
-
   }
 
 }
@@ -70,9 +69,28 @@ export default {
 @media only screen and (max-width: 360px) {
   .shows-main {
     width: 92%;
-  }
+ }
 }
 
+
+@media only screen and (max-width: 768px){
+  .shows-main{
+    .shows-container{
+      &::-webkit-scrollbar {
+        width: inherit;
+      }
+      &::-webkit-scrollbar-track {
+        background: inherit;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: inherit;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: inherit; 
+      }
+    }
+  }
+}
 
 
 

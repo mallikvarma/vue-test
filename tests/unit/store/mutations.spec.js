@@ -17,7 +17,7 @@ describe("Store actions", ()=>{
                                }, "right":  {"_embedded": {}, "image": {}, "summary": ""}}
         axios.get.mockImplementationOnce(() => Promise.resolve({data:showDetails}));     
         let _state = {activeShow:""}  
-        mutations.updateActiveShow(_state, 4)
+        mutations.UPDATE_ACTIVE_SHOW(_state, 4)
         setTimeout(()=>{
             expect(_state.activeShow).toEqual(expected)
             done();
@@ -44,7 +44,7 @@ describe("Store actions", ()=>{
         
         axios.get.mockImplementationOnce(() => Promise.resolve({data:apiResult}));     
         let _state = {searchResults:null}  
-        mutations.updateSearchResults(_state, "nna")
+        mutations.UPDATE_SEARCH_RESULTS(_state, "nna")
         setTimeout(()=>{
             expect(_state.searchResults).toEqual(expected)
             done();
@@ -80,7 +80,7 @@ describe("Store actions", ()=>{
 
         axios.get.mockImplementationOnce(() => Promise.resolve({data:apiResult}));     
         let _state = {shows:{drama:[], action:[], comedy:[],  horror:[] }}  
-        mutations.updateShows(_state)
+        mutations.UPDATE_SHOWS(_state)
         setTimeout(()=>{
             expect(_state.shows).toEqual(expected)
             done();
@@ -92,7 +92,7 @@ describe("Store actions", ()=>{
 
       it('Should be able to set loader status',  () => {
         let _state = {showLoader:false}  
-        mutations.toggleLoader(_state, true)
+        mutations.TOGGLE_LOADER(_state, true)
         expect(_state.showLoader).toBe(true)        
       })
 

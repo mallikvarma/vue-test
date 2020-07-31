@@ -31,7 +31,7 @@ export default {
     computed: mapState(["searchResults"]),
     mounted: function() {
         // get all the toprates shows after mounted
-        this.$store.dispatch("SEARCH_SHOWS", this.$route.params.name);
+        this.$store.dispatch("searchShows", this.$route.params.name);
     }
 }
 </script>

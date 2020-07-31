@@ -22,7 +22,7 @@ export default {
     searchShow: function(showName) {
       this.$router.push("/search/" + showName); 
       if( this.$route.name === 'searchResults'){
-        this.$store.dispatch("SEARCH_SHOWS", showName);
+        this.$store.dispatch("searchShows", showName);
       }
       
 

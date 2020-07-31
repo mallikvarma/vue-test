@@ -14,7 +14,7 @@ describe('app-header.component.vue', () => {
     let store
     beforeEach(() => {
         actions = {
-          SEARCH_SHOWS: jest.fn()
+          searchShows: jest.fn()
         }
         store = new Vuex.Store({
           state: { },
@@ -55,7 +55,7 @@ describe('app-header.component.vue', () => {
         wrapper.vm.$router.push = spy;
         wrapper.vm.searchShow('godfather');
         expect(spy).toHaveBeenCalledWith("/search/godfather")
-        expect(actions.SEARCH_SHOWS).toHaveBeenCalled();
+        expect(actions.searchShows).toHaveBeenCalled();
     }) 
   
   })

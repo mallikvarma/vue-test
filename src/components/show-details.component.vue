@@ -47,7 +47,7 @@ export default {
     }
   },
   mounted: function() {
-    this.$store.dispatch("GET_SHOW_DETAILS", this.$route.params.id);
+    this.$store.dispatch("getShowDetails", this.$route.params.id);
   }
 };
 </script>
@@ -139,9 +139,20 @@ export default {
         .show-desc{
           text-align: left;
         }
+
+        .show-info {
+          .info{
+            .casting {
+              text-align: center;
+            }
+          }
+
+        }
       }
     }
   }
+
+
 
 </style>
 

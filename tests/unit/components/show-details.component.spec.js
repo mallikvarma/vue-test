@@ -12,8 +12,7 @@ describe('show-details.component.vue', () => {
   
     beforeEach(() => {
       actions = {
-        GET_SHOW_DETAILS: jest.fn(),
-        GET_SHOW_DETAILS_BY_NAME: jest.fn()
+        getShowDetails: jest.fn()
       }
       store = new Vuex.Store({
         state:{
@@ -43,7 +42,7 @@ describe('show-details.component.vue', () => {
             localVue
           })
 
-          expect(actions.GET_SHOW_DETAILS).toHaveBeenCalled()
+          expect(actions.getShowDetails).toHaveBeenCalled()
      }) 
 
 
