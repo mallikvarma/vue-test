@@ -10,18 +10,23 @@ localVue.use(Vuex)
 
 describe('app-header.component.vue', () => {
    
-    let actions
-    let store
-    beforeEach(() => {
-        actions = {
-          searchShows: jest.fn()
-        }
-        store = new Vuex.Store({
-          state: { },
-          actions
-        })    
-      })
+    let actions;
+    let store;
+    
+    beforeAll(()=>{
+      actions = {
+        searchShows: jest.fn()
+      }
+      store = new Vuex.Store({
+        state: { },
+        actions
+      })    
+    })
 
+    afterAll( ()=>{
+      actions = null;
+      store = null;
+    })
 
 
     it('Should change route when searched', () => {    

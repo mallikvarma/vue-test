@@ -12,14 +12,17 @@ describe('show.component.vue', () => {
 
     let showObj;
 
-    beforeEach(()=>{
+    beforeAll(()=>{
         showObj  = {
             id: 1,
             name: "God Father",
             rating: 9.1,
             image:''
-        }
-      
+        }      
+    })
+
+    afterAll(()=>{
+        showObj = null;
     })
 
     it('Should render the name properly', () => {    

@@ -22,7 +22,7 @@ export default {
    * Gets show details from API by search
    * 
    * @param state 
-   * @param showName 
+   * @param searchResultsObj - results to update 
    */
   UPDATE_SEARCH_RESULTS: function(state, searchResultsObj) {
     state.searchResults = searchResultsObj;

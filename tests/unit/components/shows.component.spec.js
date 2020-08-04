@@ -11,7 +11,7 @@ describe('shows.component.vue', () => {
   let actions
   let store
 
-  beforeEach(() => {
+  beforeAll(() => {
     actions = {
       getTopShows: jest.fn()
     }
@@ -41,6 +41,11 @@ describe('shows.component.vue', () => {
       }},
       actions
     })    
+  })
+
+  afterAll(()=>{
+    actions = null;
+    store = null;
   })
 
 

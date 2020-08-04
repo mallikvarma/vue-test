@@ -16,7 +16,7 @@ describe("search-results.component.vue", ()=>{
         params: {name: 'godfather'}
     }
   
-    beforeEach(() => {
+    beforeAll(() => {
       actions = {
         searchShows: jest.fn()
       }
@@ -43,15 +43,20 @@ describe("search-results.component.vue", ()=>{
         ]},
         actions
       })    
-
-
-        wrapper =  mount(SearchResults, {
+      wrapper =  mount(SearchResults, {
             mocks: {
             $route
             },
             store,
             localVue
         })
+    })
+
+
+    afterAll(()=>{
+      actions = null;
+      store = null;
+      wrapper = null;
     })
   
 

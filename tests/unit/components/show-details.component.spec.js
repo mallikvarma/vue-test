@@ -6,28 +6,33 @@ const localVue = createLocalVue()
 localVue.use(Vuex)
 
 describe('show-details.component.vue', () => {
-
-    let actions
-    let store
   
-    beforeEach(() => {
+    let actions;
+    let store;
+    beforeAll(()=>{
       actions = {
         getShowDetails: jest.fn()
       }
+
       store = new Vuex.Store({
-        state:{
-          shows: [{
-                  id: 1,
-                  image: {medium:"", original:""},
-                  rating: 6.5,
-                  desc: "movie summary",
-                  name: "God Father",
-                  language: "english",
-                  runtime: "20"
-              }
-            ]},
-          actions
-      })    
+          state:{
+            shows: [{
+                    id: 1,
+                    image: {medium:"", original:""},
+                    rating: 6.5,
+                    desc: "movie summary",
+                    name: "God Father",
+                    language: "english",
+                    runtime: "20"
+                }
+              ]},
+            actions
+        }) 
+    })
+
+    afterAll(()=>{
+      actions = null;
+      store = null;
     })
 
     it('Should dispatch GET_SHOW_DETAILS when param is showId', () => {       
